@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZPM_C_RCA_CDS/$metadata">
+		<edmx:Include Alias="ZPM_C_RCA_CDS" Namespace="ZPM_C_RCA_CDS"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.astron.zpm_f_rica.ZPM_C_RCA_CDS">
+			<!--===============================================================================
+                Entity Type from chosen collection 
+                ================================================================================-->
+			<Annotations Target="ZPM_C_RCA_CDS.ZPM_C_RCAType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="{@i18n&gt;headerText}"/>
+						<PropertyValue Property="TypeNamePlural" String="{@i18n&gt;headerText}"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>gltrp</PropertyPath>
+						<PropertyPath>iwerk</PropertyPath>
+						<PropertyPath>qmnum</PropertyPath>
+						<PropertyPath>aufnr</PropertyPath>
+						<PropertyPath>tplnr</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>aufnr</PropertyPath>
+								<PropertyPath>qmnum</PropertyPath>
+								<PropertyPath>otgrp</PropertyPath>
+								<PropertyPath>fegrp</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<!--	<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="cnt"/>
+						</Record>-->
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="aufnr"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="qmnum"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="auart"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="werks"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="larnt"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="tplnr"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="fenum"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="otgrp"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="oteil"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--	<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="fegrp"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<!--<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>-->
+							<PropertyValue Property="Value" Path="fecod"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="cnt"/>
+						</Record>
+							<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="indic"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="grp"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="code"/>
+						</Record>
+					
+					
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZPM_C_RCA_CDS.ZPM_C_RCAType/cnt_q">
+				<Annotation Term="UI.Hidden" Bool="true"/>
+			</Annotations>
+			<Annotations Target="ZPM_C_RCA_CDS.ZPM_C_RCAType/cnt">
+				<Annotation Term="UI.Hidden" Bool="true"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
